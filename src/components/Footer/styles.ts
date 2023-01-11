@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Container as TextComponent } from "../TextComponent/styles";
+import { Container as HtmlComponent } from "../HtmlComponent/styles";
 
 export const Container = styled.footer`
   ${({ theme }) => css`
@@ -12,7 +12,7 @@ export const Container = styled.footer`
       font-size: ${theme.font.sizes.small};
     }
 
-    & ${TextComponent} {
+    & ${HtmlComponent} {
       font-size: ${theme.font.sizes.small};
     }
   `}

@@ -1,4 +1,6 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
+
+// components and it's type props
 import Footer, { FooterProps } from ".";
 
 export default {

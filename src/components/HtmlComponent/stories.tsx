@@ -1,11 +1,13 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
-import TextComponent, { TextComponentProps } from ".";
+
+// components and it's type props
+import HtmlComponent, { HtmlComponentProps } from ".";
 
 export default {
   title: "TextComponent",
-  component: TextComponent,
+  component: HtmlComponent,
   args: {
-    children: `
+    html: `
       Lorem ipsum, dolor sit amet consectetur adipisicing
       elit. Nihil, iure quaerat! Voluptates ducimus exercitationem,
       reprehenderit laborum, libero cum porro necessitatibus sint incidunt,
@@ -17,8 +19,8 @@ export default {
   },
 } as Meta;
 
-export const Template: Story<TextComponentProps> = (args) => (
+export const Template: Story<HtmlComponentProps> = (args) => (
   <div>
-    <TextComponent {...args} />
+    <HtmlComponent {...args} />
   </div>
 );

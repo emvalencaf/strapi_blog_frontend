@@ -1,4 +1,6 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
+
+// component and it's type props
 import LogoLink, { LogoLinkProps } from ".";
 
 export default {

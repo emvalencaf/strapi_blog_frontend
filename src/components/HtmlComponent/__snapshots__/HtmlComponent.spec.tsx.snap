@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TextComponent /> should match a snapshot 1`] = `
+exports[`<HtmlComponent /> should match a snapshot 1`] = `
 .c0 {
   font-size: 2.4rem;
 }
@@ -9,7 +9,9 @@ exports[`<TextComponent /> should match a snapshot 1`] = `
   <div
     class="c0"
   >
-    The text
+    <b>
+      Children
+    </b>
   </div>
 </div>
 `;
