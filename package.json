@@ -1,5 +1,5 @@
 {
-  "name": "08_next",
+  "name": "strapi_blog_frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
