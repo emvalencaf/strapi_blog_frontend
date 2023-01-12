@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArticleMeta /> should match a snapshot 1`] = `
+.c0 {
+  font-size: 1.6rem;
+  color: #AAAAAA;
+}
+
+.c0 .categories span::after {
+  content: ",";
+}
+
+.c0 .categories span:last-child::after {
+  content: "";
+}
+
+.c0 a {
+  color: #dc143c;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: :all 350ms ease-in-out;
+  transition: :all 350ms ease-in-out;
+}
+
+.c0 a:hover {
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+}
+
+<div>
+  <footer
+    class="c0"
+  >
+    <p>
+      <span>
+        Por 
+      </span>
+      <a
+        href="/author/lorem-ipsum"
+      >
+        Lorem ipsum
+      </a>
+      <span
+        class="separator"
+      >
+         | 
+      </span>
+      <time
+        datetime="2021-03-02T15:16:09.246+00:00"
+      >
+        2 de mar. de 2021
+      </time>
+      <span
+        class="separator"
+      >
+         | 
+      </span>
+      <span
+        class="categories"
+      >
+        <span>
+          <a
+            href="/category/tech"
+          >
+            Tech
+          </a>
+        </span>
+        <span>
+          <a
+            href="/category/javascript"
+          >
+            Javascript
+          </a>
+        </span>
+      </span>
+    </p>
+  </footer>
+</div>
+`;
