@@ -2,27 +2,27 @@ import * as Styled from "./styles";
 import Link from "next/link";
 
 export type MenuLinkProps = {
-  children: React.ReactNode;
-  link: string;
-  newTab?: boolean;
+	children: React.ReactNode;
+	link: string;
+	newTab?: boolean;
 };
 
 const MenuLink = ({ children, link, newTab = false }: MenuLinkProps) => {
-  const target = newTab ? "_blank" : "_self";
-  const nextLink = link.match(/^\//) ? true : false;
+	const target = newTab ? "_blank" : "_self";
+	const nextLink = link.match(/^\//) ? true : false;
 
-  if (nextLink)
-    return (
-      <Link href={link} passHref target={target}>
-        <Styled.Container target={target}>{children}</Styled.Container>
-      </Link>
-    );
+	if (nextLink)
+		return (
+			<Link href={link} passHref legacyBehavior>
+				<Styled.Container target={target}>{children}</Styled.Container>
+			</Link>
+		);
 
-  return (
-    <Styled.Container href={link} target={target}>
-      {children}
-    </Styled.Container>
-  );
+	return (
+		<Styled.Container href={link} target={target}>
+			{children}
+		</Styled.Container>
+	);
 };
 
 export default MenuLink;

@@ -4,11 +4,11 @@ import * as Styled from "./styles";
 import Mock from "../../components/Mock";
 
 const Home = () => {
-  return (
-    <Styled.Wrapper>
-      <Mock title="Clone-me" />
-    </Styled.Wrapper>
-  );
+	return (
+		<Styled.Wrapper>
+			<Mock title="Clone-me" />
+		</Styled.Wrapper>
+	);
 };
 
 export default Home;

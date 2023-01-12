@@ -3,14 +3,16 @@ import { renderTheme } from "../../styles/render-theme";
 import GoTop from ".";
 
 describe("<GoTop />", () => {
-  it("should render a go to top button", () => {
-    const { container } = renderTheme(<GoTop />);
-    expect(screen.getByRole("link", { name: "Go to top" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Go to top" })).toHaveAttribute(
-      "href",
-      "#"
-    );
-    expect(container).toMatchInlineSnapshot(`
+	it("should render a go to top button", () => {
+		const { container } = renderTheme(<GoTop />);
+		expect(
+			screen.getByRole("link", { name: "Go to top" })
+		).toBeInTheDocument();
+		expect(screen.getByRole("link", { name: "Go to top" })).toHaveAttribute(
+			"href",
+			"#"
+		);
+		expect(container).toMatchInlineSnapshot(`
       .c0 {
         position: fixed;
         background: #000000;
@@ -62,5 +64,5 @@ describe("<GoTop />", () => {
         </a>
       </div>
     `);
-  });
+	});
 });

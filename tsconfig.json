@@ -22,8 +22,10 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/styles/global-styles.js", "src/styles/render-theme.tsx"  ],
+    "**/*.tsx",
+    "src/styles/global-styles.js",
+    "src/styles/render-theme.tsx"
+  ],
   "exclude": [
     "node_modules"
   ]

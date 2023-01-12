@@ -5,12 +5,12 @@ import { Meta, Story } from "@storybook/react/types-6-0";
 import Mock, { MockProps } from ".";
 
 export default {
-  title: "Mock",
-  component: Mock,
+	title: "Mock",
+	component: Mock,
 } as Meta;
 
 export const Template: Story<MockProps> = (args) => (
-  <div>
-    <Mock {...args} />
-  </div>
+	<div>
+		<Mock {...args} />
+	</div>
 );
