@@ -2,44 +2,49 @@
 import { Author } from "../../shared-typed/author";
 import { Category } from "../../shared-typed/category";
 import { StrapImage } from "../../shared-typed/strap-image";
-import ArticleMeta from "../ArticleMeta";
-import Heading from "../Heading";
+
+// components
+import ArticleHeader from "../ArticleHeader";
+import HtmlComponent from "../HtmlComponent";
 
 // styles
 import * as Styled from "./styles";
 
 // types
-export type ArticleHeaderProps = {
+export type PostProps = {
+	id: string;
 	title: string;
 	excerpt: string;
-	createdAt: string;
 	cover: StrapImage;
 	author: Author;
 	categories: Category[];
+	createdAt: string;
+	content: string;
 };
 
-const ArticleHeader = ({
+const Post = ({
+	id,
 	title,
 	excerpt,
 	cover,
-	createdAt,
 	author,
 	categories,
-}: ArticleHeaderProps) => {
+	createdAt,
+	content,
+}: PostProps) => {
 	return (
-		<Styled.Wrapper>
-			<Heading as="h2" size="huge" colorDark={true}>
-				{title}
-			</Heading>
-			<Styled.Excerpt>{excerpt}</Styled.Excerpt>
-			<Styled.Cover src={cover.url} alt={title} />
-			<ArticleMeta
-				createdAt={createdAt}
+		<Styled.Wrapper key={id}>
+			<ArticleHeader
+				title={title}
+				excerpt={excerpt}
 				author={author}
+				cover={cover}
 				categories={categories}
+				createdAt={createdAt}
 			/>
+			<HtmlComponent html={content} />
 		</Styled.Wrapper>
 	);
 };
 
-export default ArticleHeader;
+export default Post;
