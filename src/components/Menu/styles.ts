@@ -1,10 +1,34 @@
-import styled, { css } from "styled-components";
+import styled, { css, DefaultTheme } from "styled-components";
 
 // imported styled
 import { Title as HeadingStyles } from "../Heading/styles";
 
-export const Wrapper = styled.div`
-	${({ theme }) => css`
+// types
+type MenuBehaviorParams = {
+	menuVisible: boolean;
+	theme: DefaultTheme;
+};
+
+const wrapperChanger = (menuVisible: boolean, theme: DefaultTheme) => css`
+	@media ${theme.media.lteMedium} {
+		left: ${menuVisible ? "0" : "-32rem"};
+	}
+
+	left: ${menuVisible ? "0" : "-30rem"};
+	overflow-y: ${menuVisible ? "auto" : "hidden"};
+`;
+
+const buttonChanger = (menuVisible: boolean, theme: DefaultTheme) => css`
+	@media ${theme.media.lteMedium} {
+		left: ${menuVisible ? "26rem" : "1rem"};
+	}
+
+	left: ${menuVisible ? "26rem" : "-1rem"};
+	color: ${menuVisible ? theme.colors.secondary : theme.colors.white};
+`;
+
+export const Wrapper = styled.div<MenuBehaviorParams>`
+	${({ theme, menuVisible }) => css`
 		background: ${theme.colors.primary};
 		padding: ${theme.spacings.large};
 		display: flex;
@@ -16,7 +40,7 @@ export const Wrapper = styled.div`
 		top: 0;
 		left: 0;
 		transition: all 350ms ease-in-out;
-		overflow-y: auto;
+		${wrapperChanger(menuVisible, theme)}
 	`}
 `;
 
@@ -27,7 +51,7 @@ export const Nav = styled.nav`
 	`}
 `;
 
-export const Logo = styled.nav`
+export const Logo = styled.div`
 	${({ theme }) => css`
 		${HeadingStyles} {
 			display: flex;
@@ -42,8 +66,8 @@ export const Logo = styled.nav`
 	`}
 `;
 
-export const OpenClose = styled.a`
-	${({ theme }) => css`
+export const OpenClose = styled.a<MenuBehaviorParams>`
+	${({ theme, menuVisible }) => css`
 		position: fixed;
 		top: ${theme.spacings.medium};
 		color: ${theme.colors.white};
@@ -52,5 +76,7 @@ export const OpenClose = styled.a`
 		width: 3rem;
 		height: 3rem;
 		left: 26rem;
+		transition: all 350ms ease-in-out;
+		${buttonChanger(menuVisible, theme)}
 	`}
 `;
