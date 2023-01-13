@@ -6,6 +6,7 @@ import { StrapImage } from "../../shared-typed/strap-image";
 // components
 import ArticleHeader from "../ArticleHeader";
 import HtmlComponent from "../HtmlComponent";
+import PostContainer from "../PostContainer";
 
 // styles
 import * as Styled from "./styles";
@@ -34,15 +35,19 @@ const Post = ({
 }: PostProps) => {
 	return (
 		<Styled.Wrapper key={id}>
-			<ArticleHeader
-				title={title}
-				excerpt={excerpt}
-				author={author}
-				cover={cover}
-				categories={categories}
-				createdAt={createdAt}
-			/>
-			<HtmlComponent html={content} />
+			<PostContainer size={"max"}>
+				<ArticleHeader
+					title={title}
+					excerpt={excerpt}
+					author={author}
+					cover={cover}
+					categories={categories}
+					createdAt={createdAt}
+				/>
+			</PostContainer>
+			<PostContainer size={"content"}>
+				<HtmlComponent html={content} />
+			</PostContainer>
 		</Styled.Wrapper>
 	);
 };
