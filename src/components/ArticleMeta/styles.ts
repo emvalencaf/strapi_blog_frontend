@@ -6,7 +6,7 @@ export const Wrapper = styled.footer`
 		color: ${theme.colors.darkerGray};
 
 		.categories span::after {
-			content: ",";
+			content: ", ";
 		}
 
 		.categories span:last-child::after {
