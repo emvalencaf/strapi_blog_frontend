@@ -10,6 +10,7 @@ import * as Styled from "./styles";
 
 // types
 export type PostCardProps = {
+	id: string;
 	title: string;
 	cover: StrapImage;
 	excerpt: string;
