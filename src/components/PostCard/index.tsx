@@ -3,7 +3,7 @@ import Link from "next/link";
 import Heading from "../Heading";
 
 // imported types
-import { StrapImage } from "../../shared-typed/strap-image";
+import { StrapImage } from "../../shared-types/strap-image";
 
 // styles
 import * as Styled from "./styles";

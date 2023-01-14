@@ -7,7 +7,7 @@ import Footer from "../../components/Footer";
 import * as Styled from "./styles";
 
 // types
-import { SettingsStrapi } from "../../shared-typed/settings-strapi";
+import { SettingsStrapi } from "../../shared-types/settings-strapi";
 import GoTop from "../../components/GoTop";
 
 export type BaseTemplateProps = {

@@ -5,7 +5,7 @@ import Link from "next/link";
 import * as Styled from "./styles";
 
 // imported type
-import { Tag } from "../../shared-typed/tags";
+import { Tag } from "../../shared-types/tags";
 
 // types
 export type PostTagsProps = {

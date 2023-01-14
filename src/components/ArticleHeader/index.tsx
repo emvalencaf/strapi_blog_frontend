@@ -1,7 +1,7 @@
 // imported types
-import { Author } from "../../shared-typed/author";
-import { Category } from "../../shared-typed/category";
-import { StrapImage } from "../../shared-typed/strap-image";
+import { Author } from "../../shared-types/author";
+import { Category } from "../../shared-types/category";
+import { StrapImage } from "../../shared-types/strap-image";
 import ArticleMeta from "../ArticleMeta";
 import Heading from "../Heading";
 
