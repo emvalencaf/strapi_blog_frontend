@@ -268,6 +268,7 @@ exports[`<PostTemplate /> should match a snapshot 1`] = `
 
 .c9 {
   margin-top: 6.4rem;
+  padding: 0 3.2rem;
 }
 
 .c11 {
@@ -424,6 +425,22 @@ exports[`<PostTemplate /> should match a snapshot 1`] = `
   }
 }
 
+@media (max-width:360px) {
+  .c10 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+  }
+
+  .c10 > .c5 {
+    margin: 0 0 2.4rem 0;
+  }
+}
+
 @media (max-width:768px) {
   .c20 {
     font-size: 2rem;
@@ -560,7 +577,9 @@ exports[`<PostTemplate /> should match a snapshot 1`] = `
                 <a
                   href="/author/otavio-miranda"
                 >
-                  Otávio Miranda
+                  <a>
+                    Otávio Miranda
+                  </a>
                 </a>
                 <span
                   class="separator"
@@ -584,14 +603,18 @@ exports[`<PostTemplate /> should match a snapshot 1`] = `
                     <a
                       href="/category/java-script"
                     >
-                      JavaScript
+                      <a>
+                        JavaScript
+                      </a>
                     </a>
                   </span>
                   <span>
                     <a
                       href="/category/react"
                     >
-                      React
+                      <a>
+                        React
+                      </a>
                     </a>
                   </span>
                 </span>

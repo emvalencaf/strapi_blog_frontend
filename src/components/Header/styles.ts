@@ -5,6 +5,15 @@ import { Title as HeadingStyles } from "../Heading/styles";
 
 export const Wrapper = styled.header`
 	${({ theme }) => css`
+		@media ${theme.media.lteSmall} {
+			display: flex;
+			flex-flow: column wrap;
+
+			& > ${HeadingStyles} {
+				margin: 0 0 ${theme.spacings.medium} 0;
+			}
+		}
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -23,6 +32,10 @@ export const Wrapper = styled.header`
 
 export const Content = styled.div`
 	${({ theme }) => css`
+		@media ${theme.media.lteSmall} {
+			margin-left: 0;
+		}
+
 		display: flex;
 		flex-flow: column wrap;
 		margin-left: ${theme.spacings.large};

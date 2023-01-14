@@ -261,6 +261,7 @@ exports[`<BaseTemplate /> should match a snapshot 1`] = `
 
 .c9 {
   margin-top: 6.4rem;
+  padding: 0 3.2rem;
 }
 
 .c11 {
@@ -309,6 +310,22 @@ exports[`<BaseTemplate /> should match a snapshot 1`] = `
 @media (max-width:768px) {
   .c0 {
     left: 1rem;
+  }
+}
+
+@media (max-width:360px) {
+  .c10 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+  }
+
+  .c10 > .c5 {
+    margin: 0 0 2.4rem 0;
   }
 }
 
