@@ -32,7 +32,7 @@ const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
 			</Styled.HeaderContainer>
 			<Styled.ContentContainer>{children}</Styled.ContentContainer>
 			<Styled.FooterContainer>
-				<Footer footerHtml={settings.text} />
+				<Footer footerHtml={settings.footer} />
 			</Styled.FooterContainer>
 			<GoTop />
 		</Styled.Wrapper>
