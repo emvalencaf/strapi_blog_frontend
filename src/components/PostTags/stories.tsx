@@ -20,7 +20,7 @@ export const Template: Story<PostTagsProps> = (args) => {
 	);
 };
 
-export const NoTags: Story<PostTagsProps> = (args) => {
+export const NoTags: Story<PostTagsProps> = () => {
 	return (
 		<div>
 			<PostTags tags={undefined} />
