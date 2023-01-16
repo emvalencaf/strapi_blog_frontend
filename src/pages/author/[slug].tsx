@@ -8,42 +8,56 @@ import PostsTemplate from "../../templates/PostsTemplate";
 import { useRouter } from "next/router";
 
 // API functions
-import { loadPosts } from "../../api/load-posts";
+import { defaultLoadPostsVariables, loadPosts } from "../../api/load-posts";
 
 // types
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ResponseLoadPosts } from "../../api/types";
 
-export default function AuthorPage({ posts, settings }: ResponseLoadPosts) {
+export default function AuthorPage({
+	posts,
+	settings,
+	variables,
+}: ResponseLoadPosts) {
 	const router = useRouter();
 
-	if (router.isFallback) return <h1>Loading...</h1>
+	if (router.isFallback) return <h1>Loading...</h1>;
 
 	return (
 		<>
 			<Head>
-				<title>Author:{posts[0].author.displayName} - {settings.blogName}</title>
-				<meta  name="description" content={settings.blogDescription}/>
+				<title>
+					Author:{posts[0].author.displayName} - {settings.blogName}
+				</title>
+				<meta name="description" content={settings.blogDescription} />
 			</Head>
-			<PostsTemplate posts={posts} settings={settings} />
+			<PostsTemplate
+				posts={posts}
+				settings={settings}
+				variables={variables}
+			/>
 		</>
 	);
-};
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
 		paths: [],
 		fallback: true,
-	}
+	};
 };
 
-export const getStaticProps: GetStaticProps<ResponseLoadPosts> = async (ctx) => {
+export const getStaticProps: GetStaticProps<ResponseLoadPosts> = async (
+	ctx
+) => {
 	let data = null;
-
-	try {
-		data = await loadPosts({ authorSlug: {
+	const variables = {
+		authorSlug: {
 			eq: ctx.params.slug as string,
-		} });
+		},
+	};
+	try {
+		data = await loadPosts(variables);
 	} catch (e) {
 		data = null;
 	}
@@ -52,13 +66,17 @@ export const getStaticProps: GetStaticProps<ResponseLoadPosts> = async (ctx) => 
 		return {
 			notFound: true,
 		};
-	};
+	}
 
 	return {
 		props: {
 			posts: data.posts,
 			settings: data.settings,
+			variables: {
+				...defaultLoadPostsVariables,
+				...variables,
+			},
 		},
-		revalidate: 24 * 60 * 60
+		revalidate: 24 * 60 * 60,
 	};
 };

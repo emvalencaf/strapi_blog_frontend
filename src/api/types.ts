@@ -26,6 +26,7 @@ export type StringFilterInput = {
 export type ResponseLoadPosts = {
 	posts: PostStrapi[];
 	settings: SettingsStrapi;
+	variables?: LoadPostsVariables;
 };
 export type ResponseRequest = {
 	posts: PostsFromDataGraphQLAttributesProps;
@@ -126,4 +127,6 @@ type SettingFromDataGraphQLAttributesProps = {
 	};
 };
 
-export type MapDataGraphQL = (dataGraphQL:ResponseRequest) => ResponseLoadPosts;
+export type MapDataGraphQL = (
+	dataGraphQL: ResponseRequest
+) => ResponseLoadPosts;

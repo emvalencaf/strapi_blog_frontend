@@ -5,20 +5,28 @@ import Head from "next/head";
 import PostsTemplate from "../templates/PostsTemplate";
 
 // API functions
-import { loadPosts } from "../api/load-posts";
+import { defaultLoadPostsVariables, loadPosts } from "../api/load-posts";
 
 // types
 import { GetStaticProps } from "next";
 import { ResponseLoadPosts } from "../api/types";
 
-export default function Index({ posts, settings }: ResponseLoadPosts) {
+export default function Index({
+	posts,
+	settings,
+	variables,
+}: ResponseLoadPosts) {
 	return (
 		<>
 			<Head>
 				<title>{settings.blogName}</title>
-				<meta  name="description" content={settings.blogDescription}/>
+				<meta name="description" content={settings.blogDescription} />
 			</Head>
-			<PostsTemplate posts={posts} settings={settings} />
+			<PostsTemplate
+				posts={posts}
+				settings={settings}
+				variables={variables}
+			/>
 		</>
 	);
 }
@@ -36,13 +44,16 @@ export const getStaticProps: GetStaticProps<ResponseLoadPosts> = async () => {
 		return {
 			notFound: true,
 		};
-	};
+	}
 
 	return {
 		props: {
 			posts: data.posts,
 			settings: data.settings,
+			variables: {
+				...defaultLoadPostsVariables,
+			},
 		},
-		revalidate: 24 * 60 * 60
+		revalidate: 24 * 60 * 60,
 	};
 };

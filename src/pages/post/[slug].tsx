@@ -18,18 +18,18 @@ export default function PostPage({ posts, settings }: ResponseLoadPosts) {
 	const router = useRouter();
 	const post = posts[0];
 
-	if (router.isFallback) return <h1>Loading...</h1>
+	if (router.isFallback) return <h1>Loading...</h1>;
 
 	return (
 		<>
 			<Head>
 				<title>{post.title}</title>
-				<meta  name="description" content={post.excerpt}/>
+				<meta name="description" content={post.excerpt} />
 			</Head>
 			<PostTemplate post={post} settings={settings} />
 		</>
 	);
-};
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	let data: ResponseLoadPosts | null = null;
@@ -37,30 +37,30 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 	try {
 		data = await loadPosts();
-		paths = data.posts.map(({slug}) => ({
+		paths = data.posts.map(({ slug }) => ({
 			params: { slug },
-		}))
+		}));
 	} catch (e) {
 		data = null;
-	}
-
-	if (!data || !data.posts || !data.posts.length) {
-		paths: [];
 	}
 
 	return {
 		paths,
 		fallback: true,
-	}
+	};
 };
 
-export const getStaticProps: GetStaticProps<ResponseLoadPosts> = async (ctx) => {
+export const getStaticProps: GetStaticProps<ResponseLoadPosts> = async (
+	ctx
+) => {
 	let data = null;
 
 	try {
-		data = await loadPosts({ postSlug: {
-			eq: ctx.params.slug as string,
-		} });
+		data = await loadPosts({
+			postSlug: {
+				eq: ctx.params.slug as string,
+			},
+		});
 	} catch (e) {
 		data = null;
 	}
@@ -69,13 +69,13 @@ export const getStaticProps: GetStaticProps<ResponseLoadPosts> = async (ctx) => 
 		return {
 			notFound: true,
 		};
-	};
+	}
 
 	return {
 		props: {
 			posts: data.posts,
 			settings: data.settings,
 		},
-		revalidate: 24 * 60 * 60
+		revalidate: 24 * 60 * 60,
 	};
 };
