@@ -21,7 +21,7 @@ const PostTags = ({ tags = [] }: PostTagsProps) => {
 			{tags.length > 0 &&
 				tags.map((tag) => (
 					<span key={tag.id}>
-						<Link href={`/ag/${tag.slug}`} legacyBehavior passHref>
+						<Link href={`/tag/${tag.slug}`} legacyBehavior passHref>
 							<a>{tag.displayName}</a>
 						</Link>
 					</span>

@@ -12,8 +12,6 @@ import { GetStaticProps } from "next";
 import { ResponseLoadPosts } from "../api/types";
 
 export default function Index({ posts, settings }: ResponseLoadPosts) {
-	console.log(posts);
-	console.log(settings);
 	return (
 		<>
 			<Head>
