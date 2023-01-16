@@ -4,10 +4,10 @@ import { MapDataGraphQL } from "./types";
 export const mapDataGraphQL: MapDataGraphQL = (dataGraphQL) => {
 	const logo = {
 		...dataGraphQL.setting.data.attributes.logo.data.attributes,
-		id: dataGraphQL.setting.data.attributes.logo.data.id,
+		id: dataGraphQL.setting.data.attributes.logo.data.attributes.alternativeText,
 	};
 	return {
-		posts: {
+		posts: [
 			...dataGraphQL.posts.data.map((post) => {
 				const author = {
 					...post.attributes.author.data.attributes,
@@ -39,7 +39,7 @@ export const mapDataGraphQL: MapDataGraphQL = (dataGraphQL) => {
 					id: post.id,
 				};
 			})
-		},
+		],
 		settings: {
 			...dataGraphQL.setting.data.attributes,
 			logo,

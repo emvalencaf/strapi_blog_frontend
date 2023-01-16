@@ -29,7 +29,7 @@ const ArticleMeta = ({
 				{typeof author !== "undefined" && (
 					<>
 						<span>Por </span>
-						<Link href={`/author/${author.slug}`}>
+						<Link href={`/author/${author.slug}`} passHref legacyBehavior>
 							<a>{author.displayName}</a>
 						</Link>
 						<span className="separator"> | </span>
@@ -42,7 +42,7 @@ const ArticleMeta = ({
 						<span className="categories">
 							{categories.map((category) => (
 								<span key={`article-meta-cat-${category.id}`}>
-									<Link href={`/category/${category.slug}`}>
+									<Link href={`/category/${category.slug}`} passHref legacyBehavior>
 										<a>{category.displayName}</a>
 									</Link>
 								</span>
