@@ -23,7 +23,7 @@
 			"newTab": true
 		  }
 		],
-		"text": "<p>O texto da footer</p>"
+		"footer": "<p>O texto da footer</p>"
 	  },
 	  "posts": [
 		{

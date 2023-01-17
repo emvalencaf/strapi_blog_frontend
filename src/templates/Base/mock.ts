@@ -4,5 +4,5 @@ import { BaseTemplateProps } from ".";
 
 export default {
 	settings: data.setting,
-	children: "Olá mundo",
+	children: data.posts[0].content,
 } as BaseTemplateProps;

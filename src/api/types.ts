@@ -36,7 +36,7 @@ export type ResponseRequest = {
 export type LoadPostsVariables = {
 	categorySlug?: StringFilterInput;
 	postSlug?: StringFilterInput;
-	postSearch?: StringFilterInput;
+	postSearch?: string;
 	authorSlug?: StringFilterInput;
 	tagSlug?: StringFilterInput;
 	sort?: string;

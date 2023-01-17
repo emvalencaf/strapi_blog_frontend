@@ -41,14 +41,14 @@ exports[`<PostTags /> should match a snapshot 1`] = `
     tags:
     <span>
       <a
-        href="/ag/use-effect"
+        href="/tag/use-effect"
       >
         useEffect
       </a>
     </span>
     <span>
       <a
-        href="/ag/use-state"
+        href="/tag/use-state"
       >
         useState
       </a>

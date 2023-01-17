@@ -26,7 +26,7 @@ const ArticleMeta = ({
 	return (
 		<Styled.Wrapper>
 			<p>
-				{typeof author !== "undefined" && (
+				{typeof author !== "undefined" && author && (
 					<>
 						<span>Por </span>
 						<Link
@@ -41,7 +41,7 @@ const ArticleMeta = ({
 				)}
 				<time dateTime={createdAt}>{formatDate(createdAt)}</time>
 				<span className="separator"> | </span>
-				{categories.length > 0 && (
+				{categories && categories.length > 0 && (
 					<>
 						<span className="categories">
 							{categories.map((category) => (

@@ -38,9 +38,7 @@ exports[`<ArticleMeta /> should match a snapshot 1`] = `
       <a
         href="/author/lorem-ipsum"
       >
-        <a>
-          Lorem ipsum
-        </a>
+        Lorem ipsum
       </a>
       <span
         class="separator"
@@ -64,18 +62,14 @@ exports[`<ArticleMeta /> should match a snapshot 1`] = `
           <a
             href="/category/tech"
           >
-            <a>
-              Tech
-            </a>
+            Tech
           </a>
         </span>
         <span>
           <a
             href="/category/javascript"
           >
-            <a>
-              Javascript
-            </a>
+            Javascript
           </a>
         </span>
       </span>

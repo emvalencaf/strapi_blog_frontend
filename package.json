@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.1",
+    "@styled-icons/boxicons-regular": "^10.47.0",
     "@styled-icons/material-outlined": "^10.47.0",
     "graphql": "^16.6.0",
     "graphql-request": "^5.1.0",
