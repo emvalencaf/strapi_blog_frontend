@@ -1,8 +1,6 @@
 // hooks
 import { useRouter } from "next/router";
 
-// icons
-import { SearchAlt } from "@styled-icons/boxicons-regular";
 // components
 import Menu from "../../components/Menu";
 import Header from "../../components/Header";

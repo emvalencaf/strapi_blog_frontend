@@ -4,6 +4,7 @@ import BaseTemplate from "../Base";
 // components
 import Post from "../../components/Post";
 import PostTags from "../../components/PostTags";
+import Comments from "../../components/Comments";
 
 // styles
 import * as Styled from "./styles";
@@ -23,6 +24,12 @@ const PostTemplate = ({ settings, post }: PostTemplateProps) => {
 			<Styled.TagsContainer>
 				<PostTags tags={post.tags} />
 			</Styled.TagsContainer>
+			<Comments
+				title={post.title}
+				slug={post.slug}
+				id={post.id}
+				allowComments={post.allowComments}
+			/>
 		</BaseTemplate>
 	);
 };
