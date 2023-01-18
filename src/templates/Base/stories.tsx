@@ -8,6 +8,9 @@ export default {
 	args: mock,
 	parameters: {
 		layout: "fullscreen",
+		background: {
+			default: "",
+		},
 	},
 } as Meta<BaseTemplateProps>;
 

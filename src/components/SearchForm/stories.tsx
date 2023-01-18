@@ -1,12 +1,18 @@
-import { Meta } from "@storybook/react/types-6-0";
-import SearchForm from ".";
+import { Meta, Story } from "@storybook/react/types-6-0";
+import SearchForm, { SearchFormProps } from ".";
 
 export default {
 	title: "SearchForm",
 	component: SearchForm,
-} as Meta;
+	args: {
+		query: "query",
+	},
+	argTypes: {
+		query: { type: "string" },
+	},
+} as Meta<SearchFormProps>;
 
-export const Template = () => {
+export const Template: Story<SearchFormProps> = () => {
 	return (
 		<div>
 			<SearchForm />

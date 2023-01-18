@@ -1,6 +1,3 @@
-// hooks
-import { useRouter } from "next/router";
-
 // icons
 import { SearchAlt } from "@styled-icons/boxicons-regular";
 
@@ -9,11 +6,10 @@ import * as Styled from "./styles";
 
 // types
 export type SearchFormProps = {
-	title?: string;
+	query?: string | string[];
 };
 
-const SearchForm = () => {
-	const router = useRouter();
+const SearchForm = ({ query = "" }: SearchFormProps) => {
 	return (
 		<Styled.SearchContainer>
 			<form action="/search/" method="GET">
@@ -21,7 +17,7 @@ const SearchForm = () => {
 					type="search"
 					placeholder="encontre posts"
 					name="q"
-					defaultValue={router.query.q}
+					defaultValue={query}
 				/>
 				<Styled.SearchButton>
 					<SearchAlt aria-label="search button" />

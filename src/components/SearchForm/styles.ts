@@ -16,7 +16,7 @@ export const SearchContainer = styled.div`
 			width: 80%;
 			max-width: 800px;
 			border: 2px solid ${theme.colors.darkerGray};
-			border-radius: 20px;
+			border-radius: 2rem;
 		}
 	`}
 `;
@@ -27,6 +27,11 @@ export const SearchInput = styled.input`
 		width: 100%;
 		border: none;
 		border-radius: 20px;
+		background: transparent;
+
+		&:focus {
+			outline: none;
+		}
 	`}
 `;
 
@@ -40,7 +45,7 @@ export const SearchButton = styled.button`
 		background: transparent;
 		cursor: pointer;
 		transition: all 350ms ease-in-out;
-
+		color: inherit;
 		&:hover {
 			color: ${theme.colors.secondary};
 		}
