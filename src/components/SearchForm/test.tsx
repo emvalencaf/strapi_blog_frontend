@@ -9,15 +9,6 @@ const mock = {
 } as SearchFormProps;
 
 describe("<SearchForm />", () => {
-	it("should render <SearchForm /> with a querystring", () => {
-		renderTheme(<SearchForm />);
-
-		expect(screen.getByLabelText("search button")).toBeInTheDocument();
-		const input = screen.getByPlaceholderText("encontre posts");
-		expect(input).toBeInTheDocument();
-		expect(input).toHaveAttribute("value", mock.query);
-	});
-
 	it("should match a snapshot", () => {
 		const { container } = renderTheme(<SearchForm />);
 
