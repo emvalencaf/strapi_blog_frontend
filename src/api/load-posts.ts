@@ -3,7 +3,7 @@ import config from "../config";
 import { GRAPHQL_QUERIES } from "../graphql/queries";
 
 // imported functions
-import { mapDataGraphQL } from "./map-lod-posts";
+import { mapDataGraphQL } from "./map-load-posts";
 
 // type
 import {

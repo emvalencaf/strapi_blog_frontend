@@ -28,6 +28,7 @@ export type ResponseLoadPosts = {
 	settings: SettingsStrapi;
 	variables?: LoadPostsVariables;
 };
+
 export type ResponseRequest = {
 	posts: PostsFromDataGraphQLAttributesProps;
 	setting: SettingFromDataGraphQLAttributesProps;
