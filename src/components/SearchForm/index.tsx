@@ -1,28 +1,49 @@
 // icons
 import { SearchAlt } from "@styled-icons/boxicons-regular";
+import { Cancel, CheckCircleOutline } from "@styled-icons/material-outlined";
 
 // styles
 import * as Styled from "./styles";
 
 // types
+import { ChangeEvent } from "react";
 export type SearchFormProps = {
-	query?: string | string[];
+	searchValue?: string | string[];
+	handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+	disabled?: boolean;
 };
 
-const SearchForm = ({ query = "" }: SearchFormProps) => {
+const SearchForm = ({
+	searchValue = "",
+	handleChange,
+	disabled = false,
+}: SearchFormProps) => {
 	return (
 		<Styled.SearchContainer>
-			<form action="/search/" method="GET">
+			<div>
 				<Styled.SearchInput
 					type="search"
 					placeholder="encontre posts"
 					name="q"
-					defaultValue={query}
+					value={searchValue}
+					onChange={handleChange}
+					disabled={disabled}
 				/>
+				{disabled ? (
+					<Cancel
+						className="search-cancel-icon"
+						aria-label="Input disabled"
+					/>
+				) : (
+					<CheckCircleOutline
+						className={"search-ok-icon"}
+						aria-label="Input enabled"
+					/>
+				)}
 				<Styled.SearchButton>
 					<SearchAlt aria-label="search button" />
 				</Styled.SearchButton>
-			</form>
+			</div>
 		</Styled.SearchContainer>
 	);
 };

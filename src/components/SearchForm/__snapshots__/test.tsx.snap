@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SearchForm /> should match a snapshot 1`] = `
-.c3 {
+.c2 {
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
@@ -27,7 +27,7 @@ exports[`<SearchForm /> should match a snapshot 1`] = `
   justify-content: center;
 }
 
-.c0 form {
+.c0 div {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -36,6 +36,24 @@ exports[`<SearchForm /> should match a snapshot 1`] = `
   max-width: 800px;
   border: 2px solid #AAAAAA;
   border-radius: 2rem;
+}
+
+.c0 div svg.search-cancel-icon,
+.c0 div svg.search-ok-icon {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  justify-self: center;
+  height: 2rem;
+  width: 2rem;
+}
+
+.c0 div svg.search-ok-icon {
+  color: #2e8b57;
+}
+
+.c0 div svg.search-cancel-icon {
+  color: #dc143c;
 }
 
 .c1 {
@@ -50,7 +68,7 @@ exports[`<SearchForm /> should match a snapshot 1`] = `
   outline: none;
 }
 
-.c2 {
+.c3 {
   width: 3rem;
   height: 3rem;
   border: none;
@@ -63,7 +81,7 @@ exports[`<SearchForm /> should match a snapshot 1`] = `
   color: inherit;
 }
 
-.c2:hover {
+.c3:hover {
   color: #dc143c;
 }
 
@@ -71,10 +89,7 @@ exports[`<SearchForm /> should match a snapshot 1`] = `
   <div
     class="c0"
   >
-    <form
-      action="/search/"
-      method="GET"
-    >
+    <div>
       <input
         class="c1"
         name="q"
@@ -82,13 +97,26 @@ exports[`<SearchForm /> should match a snapshot 1`] = `
         type="search"
         value=""
       />
+      <svg
+        aria-hidden="true"
+        aria-label="Input enabled"
+        class="c2 search-ok-icon"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z"
+        />
+      </svg>
       <button
-        class="c2"
+        class="c3"
       >
         <svg
           aria-hidden="true"
           aria-label="search button"
-          class="c3"
+          class="c2"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -102,7 +130,7 @@ exports[`<SearchForm /> should match a snapshot 1`] = `
           />
         </svg>
       </button>
-    </form>
+    </div>
   </div>
 </div>
 `;

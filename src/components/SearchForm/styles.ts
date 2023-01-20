@@ -11,12 +11,26 @@ export const SearchContainer = styled.div`
 		align-items: center;
 		justify-content: center;
 
-		& form {
+		& div {
 			display: flex;
 			width: 80%;
 			max-width: 800px;
 			border: 2px solid ${theme.colors.darkerGray};
 			border-radius: 2rem;
+
+			& svg.search-cancel-icon,
+			& svg.search-ok-icon {
+				align-self: center;
+				justify-self: center;
+				height: 2rem;
+				width: 2rem;
+			}
+			& svg.search-ok-icon {
+				color: #2e8b57;
+			}
+			& svg.search-cancel-icon {
+				color: ${theme.colors.secondary};
+			}
 		}
 	`}
 `;
